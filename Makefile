@@ -6,8 +6,8 @@ clean:
 	@rm -rf build/
 
 build: clean
-	@GOOS=windows GOARCH=amd64 go build -o ./build/$(OUTPUT_NAME).exe -ldflags "-X github.com/matthiasharzer/helpme/commands/command.version=$(BUILD_VERSION)" ./main.go
-	@GOOS=linux GOARCH=amd64 go build -o ./build/$(OUTPUT_NAME) -ldflags "-X github.com/matthiasharzer/helpme/commands/command.version=$(BUILD_VERSION)" ./main.go
+	@GOOS=windows GOARCH=amd64 go build -o ./build/$(OUTPUT_NAME).exe -ldflags "-X github.com/matthiasharzer/helpme/commands.version=$(BUILD_VERSION)" ./main.go
+	@GOOS=linux GOARCH=amd64 go build -o ./build/$(OUTPUT_NAME) -ldflags "-X github.com/matthiasharzer/helpme/commands.version=$(BUILD_VERSION)" ./main.go
 
 qa: analyze test
 

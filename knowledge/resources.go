@@ -42,7 +42,7 @@ func LoadResources() map[string]Resource {
 						},
 						actionPair{
 							action:      "Ctrl + b, ;",
-							description: "Close the current pane",
+							description: "Navigate to the previous pane",
 						},
 						actionPair{
 							action:      "Ctrl + b, z",
@@ -63,7 +63,7 @@ func LoadResources() map[string]Resource {
 					items: []resourceItem{
 						actionPair{
 							action:      "Ctrl + b, c",
-							description: "Create a new windows",
+							description: "Create a new window",
 						},
 						actionPair{
 							action:      "Ctrl + b, d",

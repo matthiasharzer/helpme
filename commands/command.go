@@ -5,7 +5,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var version string
+var version = "unknown"
 
 var showVersion bool
 
@@ -19,12 +19,12 @@ var RootCommand = &cobra.Command{
 It offers a range of commands to assist users in finding answers, accessing documentation, and more.`,
 	RunE: func(cmd *cobra.Command, args []string) error {
 		if showVersion {
-			println("helpme version", version)
+			cmd.Println("helpme version", version)
 			return nil
 		}
 
 		if len(args) != 1 {
-			println("Please specify a command. Use 'helpme --help' for more information.")
+			cmd.Println("Please specify a command.")
 			return nil
 		}
 
@@ -33,9 +33,9 @@ It offers a range of commands to assist users in finding answers, accessing docu
 		resources := knowledge.LoadResources()
 
 		if resource, exists := resources[command]; exists {
-			println(resource.Content())
+			cmd.Println(resource.Content())
 		} else {
-			println("Command not found. Use 'helpme --help' for more information.")
+			cmd.Println("Command not found.")
 		}
 
 		return nil
