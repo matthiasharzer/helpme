@@ -1,7 +1,10 @@
 package main
 
-var version = "unknown"
+import "github.com/matthiasharzer/helpme/commands"
 
 func main() {
-	println("version", version)
+	err := commands.RootCommand.Execute()
+	if err != nil {
+		panic(err)
+	}
 }
