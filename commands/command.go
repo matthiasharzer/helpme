@@ -39,6 +39,6 @@ It offers a range of commands to assist users in finding answers, accessing docu
 			return cmd.Help()
 		}
 
-		return cmd.Help()
+		return nil
 	},
 }
