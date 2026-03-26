@@ -25,7 +25,7 @@ It offers a range of commands to assist users in finding answers, accessing docu
 
 		if len(args) != 1 {
 			cmd.Println("Please specify a command.")
-			return nil
+			return cmd.Help()
 		}
 
 		command := args[0]
@@ -36,6 +36,7 @@ It offers a range of commands to assist users in finding answers, accessing docu
 			cmd.Println(resource.Content())
 		} else {
 			cmd.Println("Command not found.")
+			return cmd.Help()
 		}
 
 		return nil
