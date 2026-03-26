@@ -5,7 +5,7 @@ func LoadResources() map[string]Resource {
 		"tmux": nestedResource{
 			items: []Resource{
 				descriptiveResource{
-					title: "tmux key bindings – session management",
+					title: "tmux – session management",
 					items: []resourceItem{
 						actionPair{
 							action:      "tmux new -s <session_name>",
@@ -23,6 +23,10 @@ func LoadResources() map[string]Resource {
 							action:      "tmux kill-session -t <session_name>",
 							description: "Kill the specified tmux session",
 						},
+						actionPair{
+							action:      "Ctrl + b, $",
+							description: "Rename session",
+						},
 					},
 				},
 				descriptiveResource{
@@ -30,11 +34,11 @@ func LoadResources() map[string]Resource {
 					items: []resourceItem{
 						actionPair{
 							action:      "Ctrl + b, \"",
-							description: "Split the current pane horizontally",
+							description: "Split the current pane horizontally ↕",
 						},
 						actionPair{
 							action:      "Ctrl + b, %",
-							description: "Split the current pane vertically",
+							description: "Split the current pane vertically ↔",
 						},
 						actionPair{
 							action:      "Ctrl + b, o",
@@ -54,7 +58,7 @@ func LoadResources() map[string]Resource {
 						},
 						actionPair{
 							action:      "Ctrl + b, Space",
-							description: "Toggle between the last two panes",
+							description: "Toggle between pane layouts",
 						},
 					},
 				},
@@ -89,6 +93,10 @@ func LoadResources() map[string]Resource {
 							action:      "Ctrl + b, ,",
 							description: "Rename the current window",
 						},
+						actionPair{
+							action:      "Ctrl + b, 0...9",
+							description: "Switch to window",
+						},
 					},
 				},
 				descriptiveResource{
@@ -101,6 +109,27 @@ func LoadResources() map[string]Resource {
 						actionPair{
 							action:      "Ctrl + b, ?",
 							description: "Show all key bindings",
+						},
+					},
+				},
+				descriptiveResource{
+					title: "tmux commands",
+					items: []resourceItem{
+						actionPair{
+							action:      "Ctrl + b, :  or  tmux <command>",
+							description: "Run a tmux command",
+						},
+						actionPair{
+							action:      ":set status (on|off)",
+							description: "Toggle status bar",
+						},
+						actionPair{
+							action:      ":set status-position (top|bottom)",
+							description: "Set the status bar position",
+						},
+						actionPair{
+							action:      `:set status-style "bg=<color>,fg=<color>`,
+							description: "Set status bar colors",
 						},
 					},
 				},
