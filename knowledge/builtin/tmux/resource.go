@@ -1,9 +1,6 @@
 package tmux
 
 import (
-	"fmt"
-
-	"github.com/fatih/color"
 	"github.com/matthiasharzer/helpme/knowledge/resource"
 )
 
@@ -12,9 +9,7 @@ var Resource = resource.NestedResource{
 		resource.DescriptiveResource{
 			Title: "tmux",
 			Items: []resource.Item{
-				resource.Text{
-					TextContent: fmt.Sprintf("You configured tmux prefix: %s", color.New(color.FgMagenta).Add(color.Bold).Sprint(getTmuxPrefix())),
-				},
+				PrefixInfoItem{BeforePrefix: "Your configured tmux prefix:"},
 			},
 		},
 		resource.DescriptiveResource{
@@ -141,7 +136,7 @@ var Resource = resource.NestedResource{
 					Description: "Set the status bar position",
 				},
 				resource.ActionPairItem{
-					Action:      `:set status-style "bg=<color>,fg=<color>`,
+					Action:      `:set status-style "bg=<color>,fg=<color>"`,
 					Description: "Set status bar colors",
 				},
 			},
