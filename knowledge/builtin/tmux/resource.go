@@ -132,7 +132,7 @@ var Resource = resource.NestedResource{
 			Title: "tmux commands",
 			Items: []resource.Item{
 				PrefixResource{
-					Action:      ":  or  tmux <command>",
+					Action:      ": <command>  or  tmux <command>",
 					Description: "Run a tmux command",
 				},
 				resource.ActionPairItem{
