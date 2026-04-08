@@ -70,11 +70,11 @@ var Resource = resource.NestedResource{
 				},
 				PrefixResource{
 					Action:      "{",
-					Description: "Move the current pane left (or up)",
+					Description: "Swap the current with the left (or upper) pane",
 				},
 				PrefixResource{
 					Action:      "}",
-					Description: "Move the current pane right (or down)",
+					Description: "Swap the current with right (or lower) pane",
 				},
 			},
 		},
@@ -132,7 +132,7 @@ var Resource = resource.NestedResource{
 			Title: "tmux commands",
 			Items: []resource.Item{
 				PrefixResource{
-					Action:      ": <command>  or  tmux <command>",
+					Action:      ":  or  tmux <command>",
 					Description: "Run a tmux command",
 				},
 				resource.ActionPairItem{
