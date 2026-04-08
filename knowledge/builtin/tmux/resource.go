@@ -68,6 +68,14 @@ var Resource = resource.NestedResource{
 					Action:      "Space",
 					Description: "Toggle between pane layouts",
 				},
+				PrefixResource{
+					Action:      "{",
+					Description: "Swap the current with the left (or upper) pane",
+				},
+				PrefixResource{
+					Action:      "}",
+					Description: "Swap the current with right (or lower) pane",
+				},
 			},
 		},
 		resource.DescriptiveResource{
